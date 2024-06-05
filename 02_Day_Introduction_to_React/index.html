@@ -101,31 +101,53 @@
         // to get the root element from the HTML document
         const rootElement = document.querySelector(".root");
 
-        // JSX element, header
-        // const headerStyles = {
-        //     backgroundColor: '#61DBFB',
-        //     fontFamily: 'Helvetica Neue',
-        //     padding: 25,
-        //     lineHeight: 1.5,
-        // }
+        const welcome = 'Welcome to 30 Days Of React';
+        const title = 'Getting Started React';
+        const subtitle = 'JavaScript Library';
+        const author = {
+            firstName: 'Axel',
+            lastName: 'Sean'
+        };
+        const date = 'Jun 6, 2024';
 
-        //style={{ border: '2px solid orange', color: 'black', fontSize: '18px' }}
+        // JSX element, header
         const header = (
             <header /*style={headerStyles}*/>
                 <div className='header-wrapper'>
-                    <h1>Welcome to 30 Days Of React</h1>
-                    <h2>Getting Started React</h2>
-                    <h3>JavaScript Library</h3>
-                    <p>Axel Sean Cahyono Putra</p>
-                    <small>Jun 6, 2024</small>
+                    <h1>{welcome}</h1>
+                    <h2>{title}</h2>
+                    <h3>{subtitle}</h3>
+                    <p>
+                        Instructor: {author.firstName} {author.lastName}    
+                    </p>
+                    <small>Date: {date}</small>
                 </div>
             </header>
         )
 
+        const numOne = 3;
+        const numTwo = 2;
+
+        const result = (
+            <p>
+                {numOne} + {numTwo} = {numOne + numTwo}
+            </p>
+        )
+
+        const yearBorn = 2003;
+        const currentYear = new Date().getFullYear();
+        const age = currentYear - yearBorn;
+        const personAge = (
+            <p>
+                {' '}
+                {author.firstName} {author.lastName} is {age} years old    
+            </p>
+        )
+
         // JSX element, main
-        // const mainStyles = {
-        //     backgroundColor: '#F3F0F5',
-        // }
+        const techs = ['HTML', 'CSS', 'JavaScript'];
+        const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+
         const main = (
             <main className='main-wrapper' /*style={mainStyles}*/>
                 <p>
@@ -135,21 +157,17 @@
                     </strong>
                     :
                 </p>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>    
+                <ul>{techsFormatted}</ul>
+                {result}
+                {personAge}
             </main>
         )
 
         // JSX element, footer
-        // const footerStyles = {
-        //     backgroundColor: '#61DBFB'
-        // }
+        const copyright = 'Copyright 2024';
         const footer = (
             <footer className='footer-wrapper' /*style={footerStyles}*/>
-                <p>Copyright 2024</p>
+                <p>{copyright}</p>
             </footer>
         )
 
