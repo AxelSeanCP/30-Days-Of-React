@@ -1,0 +1,1 @@
+npx create-vite your-project-name --template react
