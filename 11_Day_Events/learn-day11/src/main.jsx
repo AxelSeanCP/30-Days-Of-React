@@ -7,7 +7,7 @@ class App extends Component {
     message: "",
     key: "",
   };
-  handleClick = (e) => {
+  handleClick = () => {
     // e gives an event object
     // check the value of e using console.log(e)
     this.setState({
@@ -15,7 +15,7 @@ class App extends Component {
     });
   };
   // triggered whenever the mouse moves
-  handleMouseMove = (e) => {
+  handleMouseMove = () => {
     this.setState({ message: "mouse is moving" });
   };
   // to get value when an input field changes a value
@@ -35,11 +35,11 @@ class App extends Component {
     });
   };
   // Blurring happens when a mouse leave an input field
-  handleBlur = (e) => {
+  handleBlur = () => {
     this.setState({ message: "Input field has been blurred" });
   };
   // this event triggers during a text copy
-  handleCopy = (e) => {
+  handleCopy = () => {
     this.setState({
       message: "Using 30 Days Of React for commercial purpose is prohibited",
     });
